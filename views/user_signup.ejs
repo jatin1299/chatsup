@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/css/form.css">
+
+ <% if (flash) { %>
+
+    <div class="alert">
+
+        <%= flash.error %>
+
+     </div>
+<% } %>
+
+
+<div class="container">
+    <h1 class="heading">
+        Sign Up
+    </h1>
+<form action="/users/create" class="form-signin" method="post">
+
+    <input type="text" name="name" class="form-control top" placeholder="Name" required>
+    <input type="email" name="email" class="form-control middle" placeholder="Email" required>
+    <input type="password" name="password" class="form-control middle" placeholder="Password" required>
+    <input type="password" name="password_confirmation" class="form-control bottom" placeholder="Confirm Password" required>
+
+    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Me Up</button>
+    <p class="mt-1">Already have an account<span><a href="sign-in" class="link-success"> Sign-In</a></span></p>
+    <p class="mt-5 mb-3 text-muted">&copy; ChatsUp by Jatin</p>
+</form>
+</div>

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/chat_box.css">
+    <h1>
+        ChatsUp / <%= title %> 
+    </h1>
+    <!-- include chat box in center of page -->
+    <div id="start-chat" class="container">
+        <button id="name-btn" class="btn btn-primary btn-small mt-2">Start chatting..</button>
+    </div>
+    <div class="container">
+        <%- include('_chat_box') -%>
+    </div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+    <script src="/js/chat_engine.js"></script>
+    
+<% if(locals.user){ %>
+<script>
+    new ChatEngine('user-chat-box', '<%= locals.user.email %>')
+</script>
+
+<% } %>
